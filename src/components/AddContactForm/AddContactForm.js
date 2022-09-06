@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "../AddContactForm/addContactForm.module.css"
 
 const AddContactForm = ({setContact}) => {
   const [input , setInput] = useState({name : "" , email: ""});
@@ -14,17 +15,17 @@ const AddContactForm = ({setContact}) => {
   }
 
   return (
-    <form onSubmit={formSubmitHandler}>
-      <p>Add Contact</p>
-      <label>
+    <form className={styles.form} onSubmit={formSubmitHandler}>
+      <header className={styles.header}>Add Contact</header>
+      <label className={styles.label}>
         Name
-        <input type="text" placeholder="Name" name="name" value={input.name} onChange={inputChangeHandler} />
+        <input className={styles.input} type="text" placeholder="Name" name="name" value={input.name} onChange={inputChangeHandler} />
       </label>
-      <label>
-        email
-        <input type="email" placeholder="Email" name="email" value={input.email} onChange={inputChangeHandler} />
+      <label className={styles.label}>
+        Email
+        <input className={styles.input} type="email" placeholder="Email" name="email" value={input.email} onChange={inputChangeHandler} />
       </label>
-      <button type="submit">Add</button>
+      <button className={styles.button} type="submit">Add</button>
     </form>
   );
 };

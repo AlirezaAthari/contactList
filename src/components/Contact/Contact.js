@@ -1,10 +1,9 @@
-const Contact = ({contact}) => {
-    console.log("contact");
+const Contact = ({contact , onDelete}) => {
     return (
         <div>
             <p>{contact.name}</p>
             <p>{contact.email}</p>
-            <button>delete</button>
+            <button onClick={onDelete}>delete</button>
         </div>
      );
 }
